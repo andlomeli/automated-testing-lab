@@ -159,6 +159,7 @@ public class TestCases : TestBasics
         Test.Log(Status.Info, "Searching for item: Green Side Placket Detail T-Shirt ");
 
         //Validating Green shirt is visible in search results
+        //pending
 
         //Clicks on item presented after item search
         Test.Log(Status.Info, "Selecting green t-shirt item from search results");
