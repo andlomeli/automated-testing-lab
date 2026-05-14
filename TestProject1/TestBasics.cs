@@ -9,14 +9,18 @@ namespace TestProject1;
 [TestFixture]
 public class TestBasics
 {
-    protected IWebDriver driver;
+    protected IWebDriver? driver;
     protected static ExtentReports Reports;
     protected static ExtentTest Test;
     protected static string reportPath;
 
     //Ignores ads because fuck em
     protected void JsClick(IWebElement element)
+
     {
+        //Throws a meaningful exception if either (driver and element) is null. Will crash if it fails and will throw error code.
+        ArgumentNullException.ThrowIfNull(driver);
+        ArgumentNullException.ThrowIfNull(element);
         ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].click();", element);
     }
 
