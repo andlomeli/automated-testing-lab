@@ -25,7 +25,9 @@ public class TestCases : TestBasics
 
         //Find the women's category in the website by using .Name (by text)
         Test.Log(Status.Info, "Clicking WOMEN category to expand dropdown");
-        var womenCategory = driver.FindElement(By.LinkText("WOMEN"));
+        //women needs specific id
+        //var womenCategory = driver.FindElement(By.LinkText("WOMEN"));
+        var womenCategory = driver.FindElement(By.Id("Women"));
         this.JsClick(womenCategory);  //Clicks the menu to expand drop down
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
 
