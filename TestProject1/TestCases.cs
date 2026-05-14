@@ -17,6 +17,8 @@ public class TestCases : TestBasics
     [Test, Order(1)]
     public void ClothesCategories() 
     {
+        //Checking if exceptions are null
+        ArgumentNullException.ThrowIfNull(driver);
         driver.Navigate().GoToUrl("https://automationexercise.com/");
         Test.Log(Status.Info, "Navigating to automationexercise.com");
 
@@ -58,6 +60,8 @@ public class TestCases : TestBasics
     [Test, Order(2)]
     public void ProductDetailsPage() 
     {
+        //Checking if exceptions are null
+        ArgumentNullException.ThrowIfNull(driver);
         Test.Log(Status.Info, "Navigating to automationexercise.com");
         driver.Navigate().GoToUrl("https://automationexercise.com/");
         var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));

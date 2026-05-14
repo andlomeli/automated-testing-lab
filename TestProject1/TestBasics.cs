@@ -3,6 +3,7 @@ using AventStack.ExtentReports.Reporter;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using System.Collections.ObjectModel;
+using System.Xml.Linq;
 
 namespace TestProject1;
 
@@ -59,6 +60,8 @@ public class TestBasics
     [TearDown]
     public void Teardown()
     {
+        //Checking if exceptions are null
+        ArgumentNullException.ThrowIfNull(driver);
         //Retrieves test status from run - if failed takes a screenshot.
         //If the test passes the status will be updated alone
         var status = TestContext.CurrentContext.Result.Outcome.Status;
@@ -88,21 +91,34 @@ public class TestBasics
 
     protected IWebElement findElementByCSS(string selector)
     {
+        //Checking if exceptions are null
+        ArgumentNullException.ThrowIfNull(driver);
         IWebElement foundCSSElement = driver.FindElement(By.CssSelector(selector));
         return foundCSSElement;
     }
 
     protected IWebElement findElementByXPath(string xpath)
     {
+        //Checking if exceptions are null
+        ArgumentNullException.ThrowIfNull(driver);
         IWebElement foundXPathElement = driver.FindElement(By.XPath(xpath));
         return foundXPathElement;
     }
 
     protected ReadOnlyCollection < IWebElement> findElementSByXPath(string xPathMulti)
     {
+        //Checking if exceptions are null
+        ArgumentNullException.ThrowIfNull(driver);
         var foundMultipleEle = driver.FindElements(By.XPath(xPathMulti));
         return foundMultipleEle;
 
+    }
+
+    protected void CheckDriverNull()
+    {
+        //Throws a meaningful exception if either (driver and element) is null. Will crash if it fails and will throw error code.
+        //If null exception is in a method the warnings will still show up - need to find a fix for later
+        ArgumentNullException.ThrowIfNull(driver);
     }
  
 }
