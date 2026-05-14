@@ -137,6 +137,8 @@ public class TestCases : TestBasics
     [Test, Order(3)]
     public void SearchProduct()
     {
+        //Checking if exceptions are null
+        ArgumentNullException.ThrowIfNull(driver);
         Test.Log(Status.Info, "Navigating to automationexercise.com");
         driver.Navigate().GoToUrl("https://automationexercise.com/");
         var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
