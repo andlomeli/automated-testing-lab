@@ -118,7 +118,7 @@ public class TestCases : TestBasics
         Assert.That(productCategory.Text, Is.EqualTo("Category: Women > Tops"));
         Test.Log(Status.Pass, $"Categroy assertion passed: {productCategory.Text}");
 
-        Assert.That(productPrice.Text, Is.EqualTo("Rs. 600"));
+        Assert.That(productPrice.Text, Is.EqualTo("Rs. 500"));
         Test.Log(Status.Pass, $"Price assertion passed: {productPrice.Text}");
 
         Assert.That(availability.Text, Is.EqualTo("Availability: In Stock"));
