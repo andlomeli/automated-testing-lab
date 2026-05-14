@@ -30,8 +30,6 @@ public class TestBasics
     {
         //ToDo: look into how to check if a file is present, check to see the version, and then increment the version file name by 1.
         //Creates report and determines its location
-        ArgumentNullException.ThrowIfNull(driver);
-        driver.Manage().Window.Size = new System.Drawing.Size(1920, 1080);
         reportPath = Path.Combine(System.Environment.ExpandEnvironmentVariables("%userprofile%/downloads/"), "TestResults.html");
         var reporter = new ExtentSparkReporter(reportPath);
         Reports = new ExtentReports();
@@ -52,8 +50,14 @@ public class TestBasics
     [SetUp]
     public void Setup()
     {
+
+       
+
         //Runs before EACH test
         driver = new FirefoxDriver();
+
+        ArgumentNullException.ThrowIfNull(driver);
+        driver.Manage().Window.Size = new System.Drawing.Size(1920, 1080);
 
         //Creates the object which will keep track of test results
         Test = Reports.CreateTest(TestContext.CurrentContext.Test.Name);
