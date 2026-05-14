@@ -97,8 +97,8 @@ public class TestCases : TestBasics
         var productCategory = this.findElementByXPath("//div[@class='product-information']//p[contains(text(), 'Category')]");
         var productPrice = this.findElementByCSS( ".product-information span span");
         var availability = this.findElementByXPath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[2]");
-        var condition = this.findElementByXPath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[2]");
-        var brand = this.findElementByXPath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[3]");
+        var condition = this.findElementByXPath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[3]");
+        var brand = this.findElementByXPath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[4]");
 
 
         // Log all scraped values before asserting so they appear in the report
